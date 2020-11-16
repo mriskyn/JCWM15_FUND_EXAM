@@ -10,6 +10,7 @@
 
     <input type="text" id="input" />
     <br />
+    <br />
 
     <div>
       <button type="button" onclick="clickGanjil()">GANJIL</button>
@@ -26,19 +27,20 @@
       document.getElementById("result").innerHTML = "<h1>RESULT:</h1>";
       const input = Number(document.getElementById("input").value);
 
-      if (input > 4 || !input) {
-        document.getElementById("result").innerHTML += `<h1>Wrong Input!</h1>`;
+      if (input > 4 || !input || input < 0) {
+        document.getElementById(
+          "result"
+        ).innerHTML += `<h1>WRONG INPUT!!!</h1>`;
       } else {
         let counter = 1;
 
         for (let i = 0; i < input; i++) {
+          let h1 = document.createElement("h1");
           for (let j = 0; j <= i; j++) {
-            document.getElementById(
-              "result"
-            ).innerHTML += `<h1>${counter}</h1>`;
+            h1.innerHTML += `${counter} `;
             counter += 2;
           }
-          document.getElementById("result").innerHTML += "<br>";
+          document.getElementById("result").appendChild(h1);
         }
       }
     }
@@ -46,19 +48,20 @@
     function clickHuruf() {
       document.getElementById("result").innerHTML = "<h1>RESULT:</h1>";
       const input = Number(document.getElementById("input").value);
-      if (input > 4 || !input) {
-        document.getElementById("result").innerHTML += `<h1>Wrong Input!</h1>`;
+      if (input > 4 || !input || input < 0) {
+        document.getElementById(
+          "result"
+        ).innerHTML += `<h1>WRONG INPUT!!!</h1>`;
       } else {
         let counter = 0;
 
         for (let i = 0; i < input; i++) {
+          let h1 = document.createElement("h1");
           for (let j = 0; j <= i; j++) {
-            document.getElementById(
-              "result"
-            ).innerHTML += `<h1>${String.fromCharCode(66 + counter)}</h1>`;
+            h1.innerHTML += `${String.fromCharCode(66 + counter)} `;
             counter += 2;
           }
-          document.getElementById("result").innerHTML += "<br>";
+          document.getElementById("result").appendChild(h1);
         }
       }
     }
