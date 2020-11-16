@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number 3</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>FORM USERS</h1>
+
+    <form onsubmit="submitUser(event)">
+      <input type="text" placeholder="username" id="add_username" />
+      <input type="text" placeholder="email" id="add_email" />
+      <label for="add_role">role</label>
+      <select id="add_role">
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+      </select>
+      <br />
+      <br />
+      <button type="submit">ADD USER</button>
+    </form>
+
+    <h1>USERS DATA</h1>
+
+    <table id="users">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Usename</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="users-list"></tbody>
+    </table>
+  </body>
+
+  <script src="./database.js"></script>
+  <script src="./script.js"></script>
+</html>
