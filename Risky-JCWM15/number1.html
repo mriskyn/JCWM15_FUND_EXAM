@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number 1</title>
+  </head>
+  <body>
+    <h1>PATTERN</h1>
+
+    <input type="text" id="input" />
+    <br />
+
+    <div>
+      <button type="button" onclick="clickGanjil()">GANJIL</button>
+      <button type="button" onclick="clickHuruf()">HURUF</button>
+    </div>
+
+    <div id="result">
+      <h1>RESULT:</h1>
+    </div>
+  </body>
+
+  <script>
+    function clickGanjil() {
+      document.getElementById("result").innerHTML = "<h1>RESULT:</h1>";
+      const input = Number(document.getElementById("input").value);
+
+      if (input > 4 || !input) {
+        document.getElementById("result").innerHTML += `<h1>Wrong Input!</h1>`;
+      } else {
+        let counter = 1;
+
+        for (let i = 0; i < input; i++) {
+          for (let j = 0; j <= i; j++) {
+            document.getElementById(
+              "result"
+            ).innerHTML += `<h1>${counter}</h1>`;
+            counter += 2;
+          }
+          document.getElementById("result").innerHTML += "<br>";
+        }
+      }
+    }
+
+    function clickHuruf() {
+      document.getElementById("result").innerHTML = "<h1>RESULT:</h1>";
+      const input = Number(document.getElementById("input").value);
+      if (input > 4 || !input) {
+        document.getElementById("result").innerHTML += `<h1>Wrong Input!</h1>`;
+      } else {
+        let counter = 0;
+
+        for (let i = 0; i < input; i++) {
+          for (let j = 0; j <= i; j++) {
+            document.getElementById(
+              "result"
+            ).innerHTML += `<h1>${String.fromCharCode(66 + counter)}</h1>`;
+            counter += 2;
+          }
+          document.getElementById("result").innerHTML += "<br>";
+        }
+      }
+    }
+  </script>
+</html>
